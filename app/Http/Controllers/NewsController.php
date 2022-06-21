@@ -147,6 +147,7 @@ class NewsController extends Controller
        -> when($request->date, function ($query) use ($request) {
             $query->whereDate('date', date('Y-m-d', strtotime($request->date)));
         })->with('typeNews')->get();
+
         return response()->json($news);
 
     }
